@@ -1,0 +1,16 @@
+/build/bin
+/build/generated
+/build/pom/target
+/**/*.settings
+/**/*.classpath
+/**/*.project
+/**/*.class
+/**/*.lst
+/**/target/classes
+/**/target/maven-archiver
+/**/target/generated-sources
+/**/target/test-classes
+/**/target/maven-status
+/**/target/self-repo-temp
+
+

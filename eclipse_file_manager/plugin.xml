@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+ <!-- eclipse 加载启动后执行 初始化应用 -->
+ 	<extension point="org.eclipse.core.runtime.preferences">
+      <initializer class="com.ht.eclipse.plugin.file.manager.Bootstrap"></initializer>
+  	</extension>
+<!--  导航栏菜单 -->
+   <extension point="org.eclipse.ui.actionSets">
+      <actionSet id="OpenExplorer.actionSet" label="文件管理器按钮" visible="true">
+         <action class="com.ht.eclipse.plugin.file.manager.event.EventMenuOpenFileManager" id="file_manager_event.EventMenuOpenFileManager" toolbarPath="menu_wo_de_dian_nao" label="文件管理器按钮"  tooltip="我的电脑" icon="icons/wo_de_dian_nao.png" ></action>
+      </actionSet>
+   </extension>
+    <!-- 右键弹出菜单 -->
+   <extension point="org.eclipse.ui.popupMenus">
+         <objectContribution objectClass="org.eclipse.core.runtime.IAdaptable" id="file_manager_popup_menu">
+         <action class="com.ht.eclipse.plugin.file.manager.event.EventPopMenuFileManager" id="file_manager_event.EventPopMenuFileManager" enablesFor="*" menubarPath="pop_wo_de_dian_nao" label="我的电脑"  icon="icons/wo_de_dian_nao.png"></action>
+      </objectContribution>
+   </extension>
+    <!--  window preferences 首选项菜单    -->
+     <!--<extension point="org.eclipse.ui.preferencePages">
+      <page name="File Manager"  class="com.ht.eclipse.plugin.file.manager.window.preferences.Page"  id="file_manager_window_preferences.Page"> </page>
+      <page id="file_manager_window_preferences.FMPage" class="com.ht.eclipse.plugin.file.manager.window.preferences.FMPage"   name="File Manager"  category="file_manager_window_preferences.Page"></page>
+   </extension>-->
+  
+</plugin>
